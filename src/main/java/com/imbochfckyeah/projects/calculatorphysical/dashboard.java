@@ -453,6 +453,10 @@ public class dashboard extends javax.swing.JFrame {
         panelRound9.setBackground(DefaultColor);
         panelRound10.setBackground(DefaultColor);
         panelRound11.setBackground(DefaultColor);
+        
+        MOVproyectiles view = new MOVproyectiles();
+        container.removeAll();
+        container.add(view).setVisible(true);
     }//GEN-LAST:event_proyectilesMousePressed
 
     private void datosperfilMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_datosperfilMousePressed
