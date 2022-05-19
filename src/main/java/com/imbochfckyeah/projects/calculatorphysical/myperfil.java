@@ -51,7 +51,7 @@ public class myperfil extends javax.swing.JInternalFrame {
         panelRound1.setRoundTopLeft(40);
         panelRound1.setRoundTopRight(40);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\joshu\\OneDrive\\1 semestre\\NetBeansProjects\\calculatorPHYSICAL\\resources\\perfil200x200.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon("resources/perfil200x200.png")); // NOI18N
 
         javax.swing.GroupLayout panelRound1Layout = new javax.swing.GroupLayout(panelRound1);
         panelRound1.setLayout(panelRound1Layout);

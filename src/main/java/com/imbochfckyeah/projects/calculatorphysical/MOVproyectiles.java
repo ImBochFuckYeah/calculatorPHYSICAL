@@ -4,7 +4,9 @@
  */
 package com.imbochfckyeah.projects.calculatorphysical;
 
+import javax.swing.*;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
+import java.text.DecimalFormat;
 
 /**
  *
@@ -12,7 +14,8 @@ import javax.swing.plaf.basic.BasicInternalFrameUI;
  */
 public class MOVproyectiles extends javax.swing.JInternalFrame {
 
-    double vi, ang, x;
+    double vi, ang, x, g = 9.8;
+    int resulParse;
 
     /**
      * Creates new form MOVproyectiles
@@ -219,10 +222,63 @@ public class MOVproyectiles extends javax.swing.JInternalFrame {
 
     private void jLabel9MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MousePressed
         // TODO add your handling code here:
-        /*vi = Double.parseDouble(jTextField1.getText());
-        ang = Double.parseDouble(jTextField3.getText());
-        x = Double.parseDouble(jTextField4.getText());*/
+        resulParse = parse();
+
+        switch (selectoption.getSelectedIndex()){
+            case 1:
+                alcMax();
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+        }
+
+
     }//GEN-LAST:event_jLabel9MousePressed
+
+    private void alcMax(){
+
+        String pattern = "###,###.###";
+        DecimalFormat decimalFormat = new DecimalFormat(pattern);
+
+
+
+        switch (resulParse){
+            case 1:
+                break;
+            case 2:
+                break;
+            case 3:
+                ang = ang * 2;
+                ang = Math.toRadians(ang);
+                x = (Math.pow(vi,2) * Math.sin(ang)) / g;
+
+                jTextField4.setText(decimalFormat.format(x));
+                break;
+        }
+
+    }
+
+    private Integer parse(){
+        if(jTextField1.getText().isEmpty()){
+            ang = Double.parseDouble(jTextField3.getText());
+            x = Double.parseDouble(jTextField4.getText());
+            return(1);
+        }else if(jTextField3.getText().isEmpty()){
+            vi = Double.parseDouble(jTextField1.getText());
+            x = Double.parseDouble(jTextField4.getText());
+            return(2);
+        }else if(jTextField4.getText().isEmpty()){
+            vi = Double.parseDouble(jTextField1.getText());
+            ang = Double.parseDouble(jTextField3.getText());
+            return(3);
+        }else{
+            JOptionPane.showMessageDialog(this, "Para realizar la operación se necesitan conocer al menos 2 variables.");
+        }
+        return(0);
+
+    }
 
     public void setcombo() {
         selectoption.addItem("Calcular alcance máximo");
@@ -267,7 +323,6 @@ public class MOVproyectiles extends javax.swing.JInternalFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
     private javax.swing.JComboBox<String> selectoption;
