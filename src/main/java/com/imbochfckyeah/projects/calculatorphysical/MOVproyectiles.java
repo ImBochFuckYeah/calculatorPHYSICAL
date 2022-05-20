@@ -50,7 +50,9 @@ public class MOVproyectiles extends javax.swing.JInternalFrame {
         jTextField4 = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
         btcalcular = new com.imbochfckyeah.projects.calculatorphysical.PanelRound();
-        jLabel9 = new javax.swing.JLabel();
+        calcular = new javax.swing.JLabel();
+        btcalcular2 = new com.imbochfckyeah.projects.calculatorphysical.PanelRound();
+        clean = new javax.swing.JLabel();
 
         jPanel1.setBackground(new java.awt.Color(144, 224, 239));
 
@@ -111,13 +113,13 @@ public class MOVproyectiles extends javax.swing.JInternalFrame {
         btcalcular.setRoundTopLeft(20);
         btcalcular.setRoundTopRight(20);
 
-        jLabel9.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel9.setText("CALCULAR");
-        jLabel9.addMouseListener(new java.awt.event.MouseAdapter() {
+        calcular.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
+        calcular.setForeground(new java.awt.Color(255, 255, 255));
+        calcular.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        calcular.setText("CALCULAR");
+        calcular.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                jLabel9MousePressed(evt);
+                calcularMousePressed(evt);
             }
         });
 
@@ -127,49 +129,79 @@ public class MOVproyectiles extends javax.swing.JInternalFrame {
             btcalcularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(btcalcularLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE)
+                .addComponent(calcular, javax.swing.GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE)
                 .addContainerGap())
         );
         btcalcularLayout.setVerticalGroup(
             btcalcularLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(btcalcularLayout.createSequentialGroup()
+            .addComponent(calcular, javax.swing.GroupLayout.DEFAULT_SIZE, 26, Short.MAX_VALUE)
+        );
+
+        btcalcular2.setBackground(new java.awt.Color(0, 180, 216));
+        btcalcular2.setRoundBottomLeft(20);
+        btcalcular2.setRoundBottomRight(20);
+        btcalcular2.setRoundTopLeft(20);
+        btcalcular2.setRoundTopRight(20);
+
+        clean.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
+        clean.setForeground(new java.awt.Color(255, 255, 255));
+        clean.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        clean.setText("LIMPIAR");
+        clean.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                cleanMousePressed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout btcalcular2Layout = new javax.swing.GroupLayout(btcalcular2);
+        btcalcular2.setLayout(btcalcular2Layout);
+        btcalcular2Layout.setHorizontalGroup(
+            btcalcular2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(btcalcular2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 26, Short.MAX_VALUE)
+                .addComponent(clean, javax.swing.GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE)
                 .addContainerGap())
+        );
+        btcalcular2Layout.setVerticalGroup(
+            btcalcular2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(clean, javax.swing.GroupLayout.DEFAULT_SIZE, 26, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(selectoption, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jTextField3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jTextField4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(28, 28, 28)
-                        .addComponent(btcalcular, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(356, 356, 356))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(123, 123, 123)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(selectoption, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jTextField3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jTextField4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(225, 225, 225))
                     .addComponent(jLabel2)
                     .addComponent(jLabel1))
                 .addContainerGap(125, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btcalcular2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btcalcular, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(371, 371, 371))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(57, 57, 57)
+                .addGap(35, 35, 35)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
@@ -187,9 +219,11 @@ public class MOVproyectiles extends javax.swing.JInternalFrame {
                 .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(btcalcular, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(61, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(btcalcular2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(45, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -206,39 +240,47 @@ public class MOVproyectiles extends javax.swing.JInternalFrame {
         setBounds(0, 0, 1010, 589);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void selectoptionItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_selectoptionItemStateChanged
-        // TODO add your handling code here:
-        switch (selectoption.getSelectedIndex()) {
-            case 1:
-                jLabel8.setText("Alcance máximo");
-                showelements();
-                break;
-            case 2:
-                jLabel8.setText("Altura máxima");
-                showelements();
-                break;
-            case 3:
-                jLabel8.setText("Tiempo de vielo");
-                showelements();
-                break;
-        }
-    }//GEN-LAST:event_selectoptionItemStateChanged
-
-    private void jLabel9MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MousePressed
+    private void calcularMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_calcularMousePressed
         // TODO add your handling code here:
         resulParse = parse();
 
         switch (selectoption.getSelectedIndex()){
             case 1:
-                xMax();
-                break;
+            xMax();
+            break;
             case 2:
-                hMax();
-                break;
+            hMax();
+            break;
             case 3:
-                break;
+            tMax();
+            break;
         }
-    }//GEN-LAST:event_jLabel9MousePressed
+    }//GEN-LAST:event_calcularMousePressed
+
+    private void selectoptionItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_selectoptionItemStateChanged
+        // TODO add your handling code here:
+        switch (selectoption.getSelectedIndex()) {
+            case 1:
+            jLabel8.setText("Alcance máximo");
+            showelements();
+            break;
+            case 2:
+            jLabel8.setText("Altura máxima");
+            showelements();
+            break;
+            case 3:
+            jLabel8.setText("Tiempo de vielo");
+            showelements();
+            break;
+        }
+    }//GEN-LAST:event_selectoptionItemStateChanged
+
+    private void cleanMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cleanMousePressed
+        // TODO add your handling code here:
+        jTextField1.setText("");
+        jTextField3.setText("");
+        jTextField4.setText("");
+    }//GEN-LAST:event_cleanMousePressed
 
     private void xMax(){
 
@@ -277,18 +319,19 @@ public class MOVproyectiles extends javax.swing.JInternalFrame {
 
         switch (resulParse){
             case 1:
-                /*ang = Math.pow(ang,2);
                 ang = Math.toRadians(ang);
-                x = (Math.pow(vi,2) * Math.sin(ang)) / 2 * g;
+                ang = Math.sin(ang);
+                vi = (sqrt(2)*sqrt(x * g)) / ang;
 
-                jTextField1.setText(decimalFormat.format(x)+" mt");*/
+                jTextField1.setText(decimalFormat.format(vi)+" mt/s");
                 break;
             case 2:
-                /*ang = ang * 2;
-                ang = Math.toRadians(ang);
-                x = (Math.pow(vi,2) * Math.sin(ang)) / g;
-
-                jTextField3.setText(decimalFormat.format(x)+" mt");*/
+                ang = sqrt((x*(2*g)) / Math.pow(vi,2));
+                System.out.println(ang);
+                ang = Math.asin(ang);
+                ang = Math.toDegrees(ang);
+                
+                jTextField3.setText(decimalFormat.format(ang)+" °");
                 break;
             case 3:
 
@@ -299,6 +342,36 @@ public class MOVproyectiles extends javax.swing.JInternalFrame {
 
 
                 jTextField4.setText(decimalFormat.format(x)+" mt");
+                break;
+        }
+
+    }
+    
+    private void tMax(){
+        String pattern = "###,###.###";
+        DecimalFormat decimalFormat = new DecimalFormat(pattern);
+
+        switch (resulParse){
+            case 1:
+                ang = Math.toRadians(ang);
+                ang = Math.sin(ang);
+                vi = (x*g) / (2*ang);
+
+                jTextField1.setText(decimalFormat.format(vi)+" mt/s");
+                break;
+            case 2:
+                ang = ((x*g)/(2*vi));
+                ang = Math.asin(ang);
+                ang = Math.toDegrees(ang);
+                
+                jTextField3.setText(decimalFormat.format(ang)+" °");
+                break;
+            case 3:
+                ang = Math.toRadians(ang);
+                ang = Math.sin(ang);
+                x = (2*((vi*(ang)/g)));
+
+                jTextField4.setText(decimalFormat.format(x)+" sg");
                 break;
         }
 
@@ -338,6 +411,7 @@ public class MOVproyectiles extends javax.swing.JInternalFrame {
         jTextField3.setVisible(false);
         jTextField4.setVisible(false);
         btcalcular.setVisible(false);
+        clean.setVisible(false);
     }
 
     public void showelements() {
@@ -348,18 +422,23 @@ public class MOVproyectiles extends javax.swing.JInternalFrame {
         jTextField3.setVisible(true);
         jTextField4.setVisible(true);
         btcalcular.setVisible(true);
+        clean.setVisible(true);
         jLabel3.setText("Velocidad inicial");
         jLabel7.setText("Ángulo");
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private com.imbochfckyeah.projects.calculatorphysical.PanelRound btcalcular;
+    private com.imbochfckyeah.projects.calculatorphysical.PanelRound btcalcular1;
+    private com.imbochfckyeah.projects.calculatorphysical.PanelRound btcalcular2;
+    private javax.swing.JLabel calcular;
+    private javax.swing.JLabel calcular1;
+    private javax.swing.JLabel clean;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField3;
