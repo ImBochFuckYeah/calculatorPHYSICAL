@@ -4,6 +4,7 @@
  */
 package com.imbochfckyeah.projects.calculatorphysical;
 
+import static java.lang.Math.sqrt;
 import javax.swing.*;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 import java.text.DecimalFormat;
@@ -141,26 +142,29 @@ public class MOVproyectiles extends javax.swing.JInternalFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(19, 19, 19)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(727, 727, 727))
+                    .addComponent(selectoption, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jTextField4, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jTextField3, javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(selectoption, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 950, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jTextField3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jTextField4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(369, 369, 369)
-                        .addComponent(btcalcular, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(381, 381, 381)))
-                .addContainerGap(29, Short.MAX_VALUE))
+                        .addGap(28, 28, 28)
+                        .addComponent(btcalcular, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(356, 356, 356))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(123, 123, 123)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel1))
+                .addContainerGap(125, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -169,7 +173,7 @@ public class MOVproyectiles extends javax.swing.JInternalFrame {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2)
-                .addGap(18, 18, 18)
+                .addGap(30, 30, 30)
                 .addComponent(selectoption, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel3)
@@ -183,9 +187,9 @@ public class MOVproyectiles extends javax.swing.JInternalFrame {
                 .addComponent(jLabel8)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btcalcular, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(67, Short.MAX_VALUE))
+                .addContainerGap(61, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -226,35 +230,72 @@ public class MOVproyectiles extends javax.swing.JInternalFrame {
 
         switch (selectoption.getSelectedIndex()){
             case 1:
-                alcMax();
+                xMax();
                 break;
             case 2:
+                hMax();
                 break;
             case 3:
                 break;
         }
-
-
     }//GEN-LAST:event_jLabel9MousePressed
 
-    private void alcMax(){
+    private void xMax(){
 
         String pattern = "###,###.###";
         DecimalFormat decimalFormat = new DecimalFormat(pattern);
 
-
-
         switch (resulParse){
             case 1:
+                ang = ang * 2;
+                ang = Math.toRadians(ang);
+                vi = sqrt((x*g) / Math.sin(ang));
+
+                jTextField1.setText(decimalFormat.format(vi)+" mt/s");
                 break;
             case 2:
+                vi = Math.pow(vi,2);
+                ang = (Math.asin(x*g/vi)) / 2;
+                ang = Math.toDegrees(ang);
+
+                jTextField3.setText(decimalFormat.format(ang)+" °");
                 break;
             case 3:
                 ang = ang * 2;
                 ang = Math.toRadians(ang);
                 x = (Math.pow(vi,2) * Math.sin(ang)) / g;
 
-                jTextField4.setText(decimalFormat.format(x));
+                jTextField4.setText(decimalFormat.format(x)+" mt");
+                break;
+        }
+
+    }
+    
+    private void hMax(){
+        String pattern = "###,###.###";
+        DecimalFormat decimalFormat = new DecimalFormat(pattern);
+
+        switch (resulParse){
+            case 1:
+                /*ang = Math.pow(ang,2);
+                ang = Math.toRadians(ang);
+                x = (Math.pow(vi,2) * Math.sin(ang)) / 2 * g;
+
+                jTextField1.setText(decimalFormat.format(x)+" mt");*/
+                break;
+            case 2:
+                /*ang = ang * 2;
+                ang = Math.toRadians(ang);
+                x = (Math.pow(vi,2) * Math.sin(ang)) / g;
+
+                jTextField3.setText(decimalFormat.format(x)+" mt");*/
+                break;
+            case 3:
+                ang = Math.pow(ang,2);
+                ang = Math.toRadians(ang);
+                x = (Math.pow(vi,2) * Math.sin(ang)) / 2 * g;
+
+                jTextField4.setText(decimalFormat.format(x)+" mt");
                 break;
         }
 
@@ -310,18 +351,13 @@ public class MOVproyectiles extends javax.swing.JInternalFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private com.imbochfckyeah.projects.calculatorphysical.PanelRound btcalcular;
-    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField3;
     private javax.swing.JTextField jTextField4;
