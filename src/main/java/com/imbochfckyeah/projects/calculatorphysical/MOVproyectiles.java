@@ -291,9 +291,12 @@ public class MOVproyectiles extends javax.swing.JInternalFrame {
                 jTextField3.setText(decimalFormat.format(x)+" mt");*/
                 break;
             case 3:
-                ang = Math.pow(ang,2);
+
                 ang = Math.toRadians(ang);
-                x = (Math.pow(vi,2) * Math.sin(ang)) / 2 * g;
+                ang = Math.sin(ang);
+                ang = Math.pow(ang,2);
+                x = (Math.pow(vi,2) * ang) / (2 * g);
+
 
                 jTextField4.setText(decimalFormat.format(x)+" mt");
                 break;
