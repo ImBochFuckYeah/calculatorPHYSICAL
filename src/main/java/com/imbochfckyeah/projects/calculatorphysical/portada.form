@@ -104,7 +104,7 @@
         <Component class="javax.swing.JLabel" name="image">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\joshu\OneDrive\1 semestre\NetBeansProjects\calculatorPHYSICAL\resources\1.png"/>
+              <Image iconType="3" name="/com/imbochfckyeah/projects/calculatorphysical/1.png"/>
             </Property>
           </Properties>
         </Component>
