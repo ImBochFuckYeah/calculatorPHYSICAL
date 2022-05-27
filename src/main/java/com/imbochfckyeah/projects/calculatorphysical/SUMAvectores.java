@@ -6,6 +6,7 @@ package com.imbochfckyeah.projects.calculatorphysical;
 
 import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
+import java.text.DecimalFormat;
 
 /**
  *
@@ -21,23 +22,11 @@ public class SUMAvectores extends javax.swing.JInternalFrame {
         this.setBorder(javax.swing.BorderFactory.createEmptyBorder(0,0,0,0));
         BasicInternalFrameUI ui = (BasicInternalFrameUI)this.getUI();
         ui.setNorthPane(null);
-        
-        //
-        jLabel3.setVisible(false);
-        jLabel4.setVisible(false);
-        jLabel5.setVisible(false);
-        jLabel6.setVisible(false);
-        jLabel7.setVisible(false);
-        jLabel8.setVisible(false);
-        vector1.setVisible(false);
-        vector2.setVisible(false);
-        vector3.setVisible(false);
-        vector4.setVisible(false);
-        vectoresultante.setVisible(false);
-        //
     }
 
-    String vectores, posiciones; int a,b; int [] v1, v2, v3, v4, vr;
+    String vectores, posiciones; int a,b;
+    double [] mag, ang, magX, magY;
+    double magSX, magSY, magR, angR;
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -56,21 +45,20 @@ public class SUMAvectores extends javax.swing.JInternalFrame {
         panelRound4 = new com.imbochfckyeah.projects.calculatorphysical.PanelRound();
         start = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        vector1 = new javax.swing.JTextArea();
+        magnitud = new javax.swing.JTextArea();
         jScrollPane2 = new javax.swing.JScrollPane();
-        vector2 = new javax.swing.JTextArea();
+        direccion = new javax.swing.JTextArea();
         jScrollPane3 = new javax.swing.JScrollPane();
-        vector3 = new javax.swing.JTextArea();
+        sumatorias = new javax.swing.JTextArea();
         jScrollPane4 = new javax.swing.JScrollPane();
-        vector4 = new javax.swing.JTextArea();
+        vResultante = new javax.swing.JTextArea();
         jScrollPane5 = new javax.swing.JScrollPane();
-        vectoresultante = new javax.swing.JTextArea();
+        dResultante = new javax.swing.JTextArea();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
 
         background.setBackground(new java.awt.Color(144, 224, 239));
 
@@ -152,90 +140,86 @@ public class SUMAvectores extends javax.swing.JInternalFrame {
         jScrollPane1.setToolTipText("");
         jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
-        vector1.setEditable(false);
-        vector1.setBackground(new java.awt.Color(0, 180, 216));
-        vector1.setColumns(20);
-        vector1.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
-        vector1.setForeground(new java.awt.Color(255, 255, 255));
-        vector1.setRows(5);
-        jScrollPane1.setViewportView(vector1);
+        magnitud.setEditable(false);
+        magnitud.setBackground(new java.awt.Color(0, 180, 216));
+        magnitud.setColumns(20);
+        magnitud.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
+        magnitud.setForeground(new java.awt.Color(255, 255, 255));
+        magnitud.setRows(5);
+        jScrollPane1.setViewportView(magnitud);
 
         jScrollPane2.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane2.setToolTipText("");
         jScrollPane2.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
-        vector2.setEditable(false);
-        vector2.setBackground(new java.awt.Color(0, 180, 216));
-        vector2.setColumns(20);
-        vector2.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
-        vector2.setForeground(new java.awt.Color(255, 255, 255));
-        vector2.setRows(5);
-        jScrollPane2.setViewportView(vector2);
+        direccion.setEditable(false);
+        direccion.setBackground(new java.awt.Color(0, 180, 216));
+        direccion.setColumns(20);
+        direccion.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
+        direccion.setForeground(new java.awt.Color(255, 255, 255));
+        direccion.setRows(5);
+        jScrollPane2.setViewportView(direccion);
 
         jScrollPane3.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane3.setToolTipText("");
         jScrollPane3.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
-        vector3.setEditable(false);
-        vector3.setBackground(new java.awt.Color(0, 180, 216));
-        vector3.setColumns(20);
-        vector3.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
-        vector3.setForeground(new java.awt.Color(255, 255, 255));
-        vector3.setRows(5);
-        jScrollPane3.setViewportView(vector3);
+        sumatorias.setEditable(false);
+        sumatorias.setBackground(new java.awt.Color(0, 180, 216));
+        sumatorias.setColumns(20);
+        sumatorias.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
+        sumatorias.setForeground(new java.awt.Color(255, 255, 255));
+        sumatorias.setRows(5);
+        jScrollPane3.setViewportView(sumatorias);
 
         jScrollPane4.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane4.setToolTipText("");
         jScrollPane4.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
-        vector4.setEditable(false);
-        vector4.setBackground(new java.awt.Color(0, 180, 216));
-        vector4.setColumns(20);
-        vector4.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
-        vector4.setForeground(new java.awt.Color(255, 255, 255));
-        vector4.setRows(5);
-        jScrollPane4.setViewportView(vector4);
+        vResultante.setEditable(false);
+        vResultante.setBackground(new java.awt.Color(0, 180, 216));
+        vResultante.setColumns(20);
+        vResultante.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
+        vResultante.setForeground(new java.awt.Color(255, 255, 255));
+        vResultante.setRows(5);
+        jScrollPane4.setViewportView(vResultante);
 
         jScrollPane5.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         jScrollPane5.setToolTipText("");
         jScrollPane5.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
 
-        vectoresultante.setEditable(false);
-        vectoresultante.setBackground(new java.awt.Color(0, 180, 216));
-        vectoresultante.setColumns(20);
-        vectoresultante.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
-        vectoresultante.setForeground(new java.awt.Color(255, 255, 255));
-        vectoresultante.setRows(5);
-        jScrollPane5.setViewportView(vectoresultante);
+        dResultante.setEditable(false);
+        dResultante.setBackground(new java.awt.Color(0, 180, 216));
+        dResultante.setColumns(20);
+        dResultante.setFont(new java.awt.Font("Bahnschrift", 0, 14)); // NOI18N
+        dResultante.setForeground(new java.awt.Color(255, 255, 255));
+        dResultante.setRows(5);
+        jScrollPane5.setViewportView(dResultante);
 
         jLabel3.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("jLabel3");
+        jLabel3.setText("Magnnitud");
 
         jLabel4.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel4.setText("jLabel4");
+        jLabel4.setText("Direccion");
 
         jLabel5.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("jLabel5");
+        jLabel5.setText("Σ magnitudes");
 
         jLabel6.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(255, 255, 255));
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("jLabel6");
+        jLabel6.setText("VR");
 
         jLabel7.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel7.setText("jLabel7");
-
-        jLabel8.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setText("jLabel8");
+        jLabel7.setText("θR");
 
         javax.swing.GroupLayout backgroundLayout = new javax.swing.GroupLayout(background);
         background.setLayout(backgroundLayout);
@@ -249,7 +233,6 @@ public class SUMAvectores extends javax.swing.JInternalFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, backgroundLayout.createSequentialGroup()
                         .addGap(80, 80, 80)
                         .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, backgroundLayout.createSequentialGroup()
                                 .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -266,7 +249,7 @@ public class SUMAvectores extends javax.swing.JInternalFrame {
                                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                                 .addGap(80, 80, 80)
                                 .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
+                                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                                 .addGap(82, 82, 82)
                                 .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -304,9 +287,7 @@ public class SUMAvectores extends javax.swing.JInternalFrame {
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jLabel8)
-                .addGap(18, 18, 18)
+                .addGap(58, 58, 58)
                 .addComponent(sumarv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(90, Short.MAX_VALUE))
         );
@@ -335,194 +316,85 @@ public class SUMAvectores extends javax.swing.JInternalFrame {
         String num = JOptionPane.showInputDialog("¿Cuantos vectore quieres sumar? (hasta 4 vectores)");
         int numv = Integer.parseInt(num);
         
-        if(numv==2){
-            dosvectores();
-        }else if(numv==3){
-            tresvectores();
-        }else if(numv==4){
-            cuatrovectores();
+        if(numv==2 || numv == 3 || numv == 4){
+            sumaVec(numv);
         }else{
             JOptionPane.showMessageDialog(this, "Solo puedes sumar de 2 a 4 vectores, intenta nuevamente.");
         }
     }//GEN-LAST:event_startMousePressed
 
-    private void dosvectores(){
-       
-        vectores = JOptionPane.showInputDialog("¿Cuantas posiciones tienen cada vector?");
-        a = Integer.parseInt(vectores);
+    private void sumaVec(int numV){
 
-        jLabel8.setVisible(true);
-        jLabel8.setText("El tamano de los vectores es de "+vectores+" posiciones.");
-        
-        //
-        jLabel3.setVisible(true);
-        jLabel3.setText("A");
-        jLabel4.setVisible(true);
-        jLabel4.setText("B");
-        jLabel7.setVisible(true);
-        jLabel7.setText("C");
-        vector1.setVisible(true);
-        vector2.setVisible(true);
-        vectoresultante.setVisible(true);
-        //
-        
-        v1 = new int[a];
-        v2 = new int[a];
-        vr = new int[a];
-        
-        for(b=0; b<a; b++){
-            v1[b] = Integer.parseInt(JOptionPane.showInputDialog("Ingresa el valor "+(b+1)+" en la posicion "+(b+1)+" del vector A"));
-            posiciones = Integer.toString(v1[b]);
-            vector1.append(posiciones+"\n");
-        }
-        for(b=0; b<a; b++){
-            v2[b] = Integer.parseInt(JOptionPane.showInputDialog("Ingresa el valor "+(b+1)+" en la posicion "+(b+1)+" del vector B"));
-            posiciones = Integer.toString(v2[b]);
-            vector2.append(posiciones+"\n");
-        }
-        for(b=0; b<a; b++){
-            vr[b] = v1[b]+v2[b];
-            posiciones = Integer.toString(vr[b]);
-            vectoresultante.append(Integer.toString(v1[b])+" + "+Integer.toString(v2[b])+" = "+posiciones+"\n");
-        }
-    }
-    
-    private void tresvectores(){
-       
-        vectores = JOptionPane.showInputDialog("¿Cuantas posiciones tienen cada vector?");
-        a = Integer.parseInt(vectores);
+        mag = new double[numV];
+        ang = new double[numV];
+        magX = new double[numV];
+        magY = new double[numV];
 
-        jLabel8.setVisible(true);
-        jLabel8.setText("El tamano de los vectores es de "+vectores+" posiciones.");
-        
-        //
-        jLabel3.setVisible(true);
-        jLabel3.setText("A");
-        jLabel4.setVisible(true);
-        jLabel4.setText("B");
-        jLabel5.setVisible(true);
-        jLabel5.setText("C");
-        jLabel7.setVisible(true);
-        jLabel7.setText("D");
-        vector1.setVisible(true);
-        vector2.setVisible(true);
-        vector3.setVisible(true);
-        vectoresultante.setVisible(true);
-        //
-        
-        v1 = new int[a];
-        v2 = new int[a];
-        v3 = new int[a];
-        vr = new int[a];
-        
-        for(b=0; b<a; b++){
-            v1[b] = Integer.parseInt(JOptionPane.showInputDialog("Ingresa el valor "+(b+1)+" en la posicion "+(b+1)+" del vector A"));
-            posiciones = Integer.toString(v1[b]);
-            vector1.append(posiciones+"\n");
-        }
-        for(b=0; b<a; b++){
-            v2[b] = Integer.parseInt(JOptionPane.showInputDialog("Ingresa el valor "+(b+1)+" en la posicion "+(b+1)+" del vector B"));
-            posiciones = Integer.toString(v2[b]);
-            vector2.append(posiciones+"\n");
-        }
-        for(b=0; b<a; b++){
-            v3[b] = Integer.parseInt(JOptionPane.showInputDialog("Ingresa el valor "+(b+1)+" en la posicion "+(b+1)+" del vector C"));
-            posiciones = Integer.toString(v3[b]);
-            vector3.append(posiciones+"\n");
-        }
-        for(b=0; b<a; b++){
-            vr[b] = v1[b]+v2[b]+v3[b];
-            posiciones = Integer.toString(vr[b]);
-            vectoresultante.append(Integer.toString(v1[b])+" + "+Integer.toString(v2[b])+" + "+Integer.toString(v3[b])+" = "+posiciones+"\n");
-        }
-    }
-    
-    private void cuatrovectores(){
-       
-        vectores = JOptionPane.showInputDialog("¿Cuantas posiciones tienen cada vector?");
-        a = Integer.parseInt(vectores);
+        String pattern = "######.#";
+        DecimalFormat decimalFormat = new DecimalFormat(pattern);
+        String vec = "";
 
-        jLabel8.setVisible(true);
-        jLabel8.setText("El tamano de los vectores es de "+vectores+" posiciones.");
-        
-        //
-        jLabel3.setVisible(true);
-        jLabel3.setText("A");
-        jLabel4.setVisible(true);
-        jLabel4.setText("B");
-        jLabel5.setVisible(true);
-        jLabel5.setText("C");
-        jLabel6.setVisible(true);
-        jLabel6.setText("D");
-        jLabel7.setVisible(true);
-        jLabel7.setText("E");
-        vector1.setVisible(true);
-        vector2.setVisible(true);
-        vector3.setVisible(true);
-        vector4.setVisible(true);
-        vectoresultante.setVisible(true);
-        //
-        
-        v1 = new int[a];
-        v2 = new int[a];
-        v3 = new int[a];
-        v4 = new int[a];
-        vr = new int[a];
-        
-        for(b=0; b<a; b++){
-            v1[b] = Integer.parseInt(JOptionPane.showInputDialog("Ingresa el valor "+(b+1)+" en la posicion "+(b+1)+" del vector A"));
-            posiciones = Integer.toString(v1[b]);
-            vector1.append(posiciones+"\n");
+        //Pedir datos
+        for(b=0; b<numV; b++){
+            
+            if(b==0){
+                vec = "A";
+            }else if(b==1){
+                vec = "B";
+            }else if(b==2){
+                vec = "C";
+            }else if(b==3){
+                vec = "D";
+            }
+
+            mag[b] = Double.parseDouble(JOptionPane.showInputDialog("Ingrese el valor de la magnitud del vector " + vec));
+            ang[b] = Double.parseDouble(JOptionPane.showInputDialog("Ingrese el valor del ángulo del vector " + vec));
+
+            magnitud.append(vec + " = " + mag[b]+"\n");
+            direccion.append(vec + " = " + ang[b]+"°\n");
         }
-        for(b=0; b<a; b++){
-            v2[b] = Integer.parseInt(JOptionPane.showInputDialog("Ingresa el valor "+(b+1)+" en la posicion "+(b+1)+" del vector B"));
-            posiciones = Integer.toString(v2[b]);
-            vector2.append(posiciones+"\n");
+
+        //Calcular Magnitudes de X y de Y
+        int cont = 0;
+        magSX = 0;
+        magSY = 0;
+        for(Double x: mag){
+            double angTemp = Math.toRadians(ang[cont]);
+            magX[cont] = x * Math.cos(angTemp);
+            magY[cont] = x * Math.sin(angTemp);
+
+            magSX = magSX + magX[cont];
+            magSY = magSY + magY[cont];
+
+            cont = cont + 1;
         }
-        for(b=0; b<a; b++){
-            v3[b] = Integer.parseInt(JOptionPane.showInputDialog("Ingresa el valor "+(b+1)+" en la posicion "+(b+1)+" del vector C"));
-            posiciones = Integer.toString(v3[b]);
-            vector3.append(posiciones+"\n");
-        }
-        for(b=0; b<a; b++){
-            v4[b] = Integer.parseInt(JOptionPane.showInputDialog("Ingresa el valor "+(b+1)+" en la posicion "+(b+1)+" del vector D"));
-            posiciones = Integer.toString(v4[b]);
-            vector4.append(posiciones+"\n");
-        }
-        for(b=0; b<a; b++){
-            vr[b] = v1[b]+v2[b]+v3[b]+v4[b];
-            posiciones = Integer.toString(vr[b]);
-            vectoresultante.append(Integer.toString(v1[b])+" + "+Integer.toString(v2[b])+" + "+Integer.toString(v3[b])+" + "+Integer.toString(v4[b])+" = "+posiciones+"\n");
-        }
+
+        magSX = Double.parseDouble(decimalFormat.format(magSX));
+        magSY = Double.parseDouble(decimalFormat.format(magSY));
+
+        sumatorias.append("ΣX = " + magSX + "\n" + "ΣY = " + magSY);
+
+        //Resultantes
+        magR = Math.sqrt((Math.pow(magSX, 2) + Math.pow(magSY, 2)));
+        angR = Math.toDegrees(Math.atan((magSY/magSX)));
+
+        vResultante.append("VR = " + decimalFormat.format(magR));
+        dResultante.append("θR = " + decimalFormat.format(angR));
     }
-    
+
+
     private void limpiar(){
-    jLabel3.setText("");
-        jLabel4.setText("");
-        jLabel5.setText("");
-        jLabel6.setText("");
-        jLabel7.setText("");
-        jLabel8.setText("");
-        vector1.setText("");
-        vector2.setText("");
-        vector3.setText("");
-        vector4.setText("");
-        vectoresultante.setText("");
-        jLabel3.setVisible(false);
-        jLabel4.setVisible(false);
-        jLabel5.setVisible(false);
-        jLabel6.setVisible(false);
-        jLabel7.setVisible(false);
-        jLabel8.setVisible(false);
-        vector1.setVisible(false);
-        vector2.setVisible(false);
-        vector3.setVisible(false);
-        vector4.setVisible(false);
-        vectoresultante.setVisible(false);
+        magnitud.setText("");
+        direccion.setText("");
+        sumatorias.setText("");
+        vResultante.setText("");
+        dResultante.setText("");
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel background;
+    private javax.swing.JTextArea dResultante;
+    private javax.swing.JTextArea direccion;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -530,20 +402,17 @@ public class SUMAvectores extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JTextArea magnitud;
     private com.imbochfckyeah.projects.calculatorphysical.PanelRound panelRound4;
     private javax.swing.JLabel start;
     private com.imbochfckyeah.projects.calculatorphysical.PanelRound sumarv;
-    private javax.swing.JTextArea vector1;
-    private javax.swing.JTextArea vector2;
-    private javax.swing.JTextArea vector3;
-    private javax.swing.JTextArea vector4;
-    private javax.swing.JTextArea vectoresultante;
+    private javax.swing.JTextArea sumatorias;
+    private javax.swing.JTextArea vResultante;
     private javax.swing.JLabel volvers;
     // End of variables declaration//GEN-END:variables
 }

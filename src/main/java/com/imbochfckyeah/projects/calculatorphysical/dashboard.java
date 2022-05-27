@@ -54,7 +54,7 @@ public class dashboard extends javax.swing.JFrame {
         converttime = new javax.swing.JLabel();
         container = new javax.swing.JDesktopPane();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DO_NOTHING_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Dashboard");
         setBackground(new java.awt.Color(199, 249, 204));
         setResizable(false);
@@ -76,7 +76,7 @@ public class dashboard extends javax.swing.JFrame {
 
         dash.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         dash.setForeground(new java.awt.Color(255, 255, 255));
-        dash.setIcon(new javax.swing.ImageIcon("resources/outline_dashboard_white_24dp.png")); // NOI18N
+        dash.setIcon(new javax.swing.ImageIcon("C:\\Users\\joshu\\OneDrive\\1 semestre\\NetBeansProjects\\calculatorPHYSICAL\\resources\\outline_dashboard_white_24dp.png")); // NOI18N
         dash.setText("DASHBOARD");
         dash.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -112,7 +112,7 @@ public class dashboard extends javax.swing.JFrame {
 
         convertlong.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         convertlong.setForeground(new java.awt.Color(255, 255, 255));
-        convertlong.setIcon(new javax.swing.ImageIcon("resources/outline_square_foot_white_24dp.png")); // NOI18N
+        convertlong.setIcon(new javax.swing.ImageIcon("C:\\Users\\joshu\\OneDrive\\1 semestre\\NetBeansProjects\\calculatorPHYSICAL\\resources\\outline_square_foot_white_24dp.png")); // NOI18N
         convertlong.setText("Longitud");
         convertlong.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -145,7 +145,7 @@ public class dashboard extends javax.swing.JFrame {
 
         proyectiles.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         proyectiles.setForeground(new java.awt.Color(255, 255, 255));
-        proyectiles.setIcon(new javax.swing.ImageIcon("resources/outline_airline_stops_white_24dp.png")); // NOI18N
+        proyectiles.setIcon(new javax.swing.ImageIcon("C:\\Users\\joshu\\OneDrive\\1 semestre\\NetBeansProjects\\calculatorPHYSICAL\\resources\\outline_airline_stops_white_24dp.png")); // NOI18N
         proyectiles.setText("Proyectiles");
         proyectiles.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -178,7 +178,7 @@ public class dashboard extends javax.swing.JFrame {
 
         datosperfil.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         datosperfil.setForeground(new java.awt.Color(255, 255, 255));
-        datosperfil.setIcon(new javax.swing.ImageIcon("resources/outline_account_circle_white_24dp.png")); // NOI18N
+        datosperfil.setIcon(new javax.swing.ImageIcon("C:\\Users\\joshu\\OneDrive\\1 semestre\\NetBeansProjects\\calculatorPHYSICAL\\resources\\outline_account_circle_white_24dp.png")); // NOI18N
         datosperfil.setText("Datos estudiante");
         datosperfil.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -211,7 +211,7 @@ public class dashboard extends javax.swing.JFrame {
 
         salir.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         salir.setForeground(new java.awt.Color(255, 255, 255));
-        salir.setIcon(new javax.swing.ImageIcon("resources/outline_logout_white_24dp.png")); // NOI18N
+        salir.setIcon(new javax.swing.ImageIcon("C:\\Users\\joshu\\OneDrive\\1 semestre\\NetBeansProjects\\calculatorPHYSICAL\\resources\\outline_logout_white_24dp.png")); // NOI18N
         salir.setText("SALIR");
         salir.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -247,7 +247,7 @@ public class dashboard extends javax.swing.JFrame {
 
         sumavectores.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         sumavectores.setForeground(new java.awt.Color(255, 255, 255));
-        sumavectores.setIcon(new javax.swing.ImageIcon("resources/outline_functions_white_24dp.png")); // NOI18N
+        sumavectores.setIcon(new javax.swing.ImageIcon("C:\\Users\\joshu\\OneDrive\\1 semestre\\NetBeansProjects\\calculatorPHYSICAL\\resources\\outline_functions_white_24dp.png")); // NOI18N
         sumavectores.setText("Suma de vectores");
         sumavectores.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -280,7 +280,7 @@ public class dashboard extends javax.swing.JFrame {
 
         convertmasa.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         convertmasa.setForeground(new java.awt.Color(255, 255, 255));
-        convertmasa.setIcon(new javax.swing.ImageIcon("resources/outline_scale_white_24dp.png")); // NOI18N
+        convertmasa.setIcon(new javax.swing.ImageIcon("C:\\Users\\joshu\\OneDrive\\1 semestre\\NetBeansProjects\\calculatorPHYSICAL\\resources\\outline_scale_white_24dp.png")); // NOI18N
         convertmasa.setText("Masa");
         convertmasa.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
@@ -313,7 +313,7 @@ public class dashboard extends javax.swing.JFrame {
 
         converttime.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         converttime.setForeground(new java.awt.Color(255, 255, 255));
-        converttime.setIcon(new javax.swing.ImageIcon("resources/outline_update_white_24dp.png")); // NOI18N
+        converttime.setIcon(new javax.swing.ImageIcon("C:\\Users\\joshu\\OneDrive\\1 semestre\\NetBeansProjects\\calculatorPHYSICAL\\resources\\outline_update_white_24dp.png")); // NOI18N
         converttime.setText("Tiempo");
         converttime.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
