@@ -4,6 +4,7 @@
  */
 package com.imbochfckyeah.projects.calculatorphysical;
 
+import java.text.DecimalFormat;
 import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
@@ -247,6 +248,8 @@ public class MASAconvert extends javax.swing.JInternalFrame {
     private void calcularMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_calcularMousePressed
         // TODO add your handling code here:
         double kg, g, lb, oz, r1, r2, r3;
+        String pattern = "###,###.#";
+        DecimalFormat decimalFormat = new DecimalFormat(pattern);
         
         kg = Integer.parseInt(kilogramo.getText());
         g = Integer.parseInt(gramo.getText());
@@ -258,30 +261,30 @@ public class MASAconvert extends javax.swing.JInternalFrame {
             r1 = kg*1000;
             r2 = kg*2.205;
             r3 = kg*35.274;
-            gramo.setText(""+r1+" g");
-            libra.setText(""+r2+" lb");
-            onza.setText(""+r3+" oz");
+            gramo.setText(""+decimalFormat.format(r1)+" g");
+            libra.setText(""+decimalFormat.format(r2)+" lb");
+            onza.setText(""+decimalFormat.format(r3)+" oz");
         }else if(kg==0 && g!=0 && lb==0 && oz==0){
             r1 = g/1000;
             r2 = g/454;
             r3 = g/28.35;
-            kilogramo.setText(""+r1+" kg");
-            libra.setText(""+r2+" lb");
-            onza.setText(""+r3+" oz");
+            kilogramo.setText(""+decimalFormat.format(r1)+" kg");
+            libra.setText(""+decimalFormat.format(r2)+" lb");
+            onza.setText(""+decimalFormat.format(r3)+" oz");
         }else if(kg==0 && g==0 && lb!=0 && oz==0){
             r1 = lb/2.205;
             r2 = lb*454;
             r3 = lb*16;
-            kilogramo.setText(""+r1+" kg");
-            gramo.setText(""+r2+" g");
-            onza.setText(""+r3+" oz");
+            kilogramo.setText(""+decimalFormat.format(r1)+" kg");
+            gramo.setText(""+decimalFormat.format(r2)+" g");
+            onza.setText(""+decimalFormat.format(r3)+" oz");
         }else if(kg==0 && g==0 && lb==0 && oz!=0){
             r1 = oz/35.274;
             r2 = oz*28.35;
             r3 = oz/16;
-            kilogramo.setText(""+r1+" kg");
-            gramo.setText(""+r2+" g");
-            libra.setText(""+r3+" lb");
+            kilogramo.setText(""+decimalFormat.format(r1)+" kg");
+            gramo.setText(""+decimalFormat.format(r2)+" g");
+            libra.setText(""+decimalFormat.format(r3)+" lb");
         }else{
             JOptionPane.showMessageDialog(this, "Por favor introduce un valor, en algún campo.");
         }

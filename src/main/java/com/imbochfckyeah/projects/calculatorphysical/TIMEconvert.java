@@ -4,6 +4,7 @@
  */
 package com.imbochfckyeah.projects.calculatorphysical;
 
+import java.text.DecimalFormat;
 import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
@@ -269,6 +270,8 @@ public class TIMEconvert extends javax.swing.JInternalFrame {
     private void calcularMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_calcularMousePressed
         // TODO add your handling code here:
         double sg, mts, hrs, ds, ans, r1, r2, r3, r4;
+        String pattern = "###,###.#";
+        DecimalFormat decimalFormat = new DecimalFormat(pattern);
         
         sg = Integer.parseInt(segundo.getText());
         mts = Integer.parseInt(minuto.getText());
@@ -281,46 +284,46 @@ public class TIMEconvert extends javax.swing.JInternalFrame {
             r2 = sg/3600;
             r3 = sg/86400;
             r4 = sg/0.0000003154;
-            minuto.setText(""+r1+" mts");
-            hora.setText(""+r2+" hrs");
-            dia.setText(""+r3+" ds");
-            ano.setText(""+r4+" ans");
+            minuto.setText(""+decimalFormat.format(r1)+" mts");
+            hora.setText(""+decimalFormat.format(r2)+" hrs");
+            dia.setText(""+decimalFormat.format(r3)+" ds");
+            ano.setText(""+decimalFormat.format(r4)+" ans");
         }else if(sg==0 && mts!=0 && hrs==0 && ds==0 && ans==0){
             r1 = mts*60;
             r2 = mts/60;
             r3 = mts/1440;
             r4 = mts/525600;
-            segundo.setText(""+r1+" sg");
-            hora.setText(""+r2+" hrs");
-            dia.setText(""+r3+" ds");
-            ano.setText(""+r4+" ans");
+            segundo.setText(""+decimalFormat.format(r1)+" sg");
+            hora.setText(""+decimalFormat.format(r2)+" hrs");
+            dia.setText(""+decimalFormat.format(r3)+" ds");
+            ano.setText(""+decimalFormat.format(r4)+" ans");
         }else if(sg==0 && mts==0 && hrs!=0 && ds==0 && ans==0){
             r1 = hrs*3600;
             r2 = hrs*60;
             r3 = hrs/24;
             r4 = hrs/8760;
-            segundo.setText(""+r1+" sg");
-            minuto.setText(""+r2+" mts");
-            dia.setText(""+r3+" ds");
-            ano.setText(""+r4+" ans");
+            segundo.setText(""+decimalFormat.format(r1)+" sg");
+            minuto.setText(""+decimalFormat.format(r2)+" mts");
+            dia.setText(""+decimalFormat.format(r3)+" ds");
+            ano.setText(""+decimalFormat.format(r4)+" ans");
         }else if(sg==0 && mts==0 && hrs==0 && ds!=0 && ans==0){
             r1 = ds*86400;
             r2 = ds*1440;
             r3 = ds*24;
             r4 = ds/365;
-            segundo.setText(""+r1+" sg");
-            minuto.setText(""+r2+" mts");
-            hora.setText(""+r3+" hrs");
-            ano.setText(""+r4+" ans");
+            segundo.setText(""+decimalFormat.format(r1)+" sg");
+            minuto.setText(""+decimalFormat.format(r2)+" mts");
+            hora.setText(""+decimalFormat.format(r3)+" hrs");
+            ano.setText(""+decimalFormat.format(r4)+" ans");
         }else if(sg==0 && mts==0 && hrs==0 && ds==0 && ans!=0){
             r1 = ans*31540000;
             r2 = ans*525600;
             r3 = ans*8760;
             r4 = ans*365;
-            segundo.setText(""+r1+" sg");
-            minuto.setText(""+r2+" mts");
-            hora.setText(""+r3+" hrs");
-            dia.setText(""+r4+" ds");
+            segundo.setText(""+decimalFormat.format(r1)+" sg");
+            minuto.setText(""+decimalFormat.format(r2)+" mts");
+            hora.setText(""+decimalFormat.format(r3)+" hrs");
+            dia.setText(""+decimalFormat.format(r4)+" ds");
         }else{
             JOptionPane.showMessageDialog(this, "Por favor introduce un valor, en algún campo.");
         }

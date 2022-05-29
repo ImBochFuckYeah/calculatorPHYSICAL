@@ -43,7 +43,7 @@ public class portada extends javax.swing.JInternalFrame {
 
         jPanel1.setBackground(new java.awt.Color(144, 224, 239));
 
-        //image.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/imbochfckyeah/projects/calculatorphysical/1.png"))); // NOI18N
+        image.setIcon(new javax.swing.ImageIcon("C:\\Users\\joshu\\Documents\\NetBeansProjects\\calculatorPHYSICAL\\resources\\1.png")); // NOI18N
 
         jLabel1.setFont(new java.awt.Font("Arial Rounded MT Bold", 0, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));

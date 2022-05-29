@@ -112,7 +112,7 @@ public class dashboard extends javax.swing.JFrame {
 
         convertlong.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         convertlong.setForeground(new java.awt.Color(255, 255, 255));
-        convertlong.setIcon(new javax.swing.ImageIcon("C:\\Users\\joshu\\OneDrive\\1 semestre\\NetBeansProjects\\calculatorPHYSICAL\\resources\\outline_square_foot_white_24dp.png")); // NOI18N
+        convertlong.setIcon(new javax.swing.ImageIcon("resources/outline_square_foot_white_24dp.png")); // NOI18N
         convertlong.setText("Longitud");
         convertlong.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {

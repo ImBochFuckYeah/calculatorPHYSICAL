@@ -4,6 +4,7 @@
  */
 package com.imbochfckyeah.projects.calculatorphysical;
 
+import java.text.DecimalFormat;
 import javax.swing.JOptionPane;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 
@@ -73,6 +74,11 @@ public class LONGconvert extends javax.swing.JInternalFrame {
         metros.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         metros.setText("0");
         metros.setBorder(null);
+        metros.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                metrosKeyTyped(evt);
+            }
+        });
 
         jLabel4.setFont(new java.awt.Font("Bahnschrift", 0, 18)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
@@ -287,6 +293,8 @@ public class LONGconvert extends javax.swing.JInternalFrame {
     private void calcularMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_calcularMousePressed
         // TODO add your handling code here:
         double mt, km, mi, ft, cm, in, r1, r2, r3, r4, r5;
+        String pattern = "###,###.#";
+        DecimalFormat decimalFormat = new DecimalFormat(pattern);
         
         mt = Integer.parseInt(metros.getText());
         km = Integer.parseInt(kilometros.getText());
@@ -295,76 +303,75 @@ public class LONGconvert extends javax.swing.JInternalFrame {
         cm = Integer.parseInt(centimetros.getText());
         in = Integer.parseInt(pulgadas.getText());
         //metros
-        if(mt!=0 && km==0 && mi==0 && ft==0 && cm==0 && in==0){
+        if(mt!=0){
             r1 = mt/1000;
             r2 = mt/1609;
             r3 = mt*3.281;
             r4 = mt*100;
             r5 = mt*39.37;
-            kilometros.setText(""+r1+" km");
-            millas.setText(""+r2+" mi");
-            pies.setText(""+r3+" ft");
-            centimetros.setText(""+r4+" cm");
-            pulgadas.setText(""+r5+" in");
-        }else if(mt==0 && km!=0 && mi==0 && ft==0 && cm==0 && in==0){
+            kilometros.setText(""+decimalFormat.format(r1)+" km");
+            millas.setText(""+decimalFormat.format(r2)+" mi");
+            pies.setText(""+decimalFormat.format(r3)+" ft");
+            centimetros.setText(""+decimalFormat.format(r4)+" cm");
+            pulgadas.setText(""+decimalFormat.format(r5)+" in");
+        }else if(km!=0){
             r1 = km*1000;
             r2 = km/1.609;
             r3 = km*3281;
             r4 = km*100000;
             r5 = km*39370;
-            metros.setText(""+r1+" mt");
-            millas.setText(""+r2+" mi");
-            pies.setText(""+r3+" ft");
-            centimetros.setText(""+r4+" cm");
-            pulgadas.setText(""+r5+" in");
-        }else if(mt==0 && km==0 && mi!=0 && ft==0 && cm==0 && in==0){
+            metros.setText(""+decimalFormat.format(r1)+" mt");
+            millas.setText(""+decimalFormat.format(r2)+" mi");
+            pies.setText(""+decimalFormat.format(r3)+" ft");
+            centimetros.setText(""+decimalFormat.format(r4)+" cm");
+            pulgadas.setText(""+decimalFormat.format(r5)+" in");
+        }else if(mi!=0){
             r1 = mi*1609;
             r2 = mi*1.609;
             r3 = mi*5280;
             r4 = mi*160934;
             r5 = mi*63360;
-            metros.setText(""+r1+" mt");
-            kilometros.setText(""+r2+" km");
-            pies.setText(""+r3+" ft");
-            centimetros.setText(""+r4+" cm");
-            pulgadas.setText(""+r5+" in");
-        }else if(mt==0 && km==0 && mi==0 && ft!=0 && cm==0 && in==0){
+            metros.setText(""+decimalFormat.format(r1)+" mt");
+            kilometros.setText(""+decimalFormat.format(r2)+" km");
+            pies.setText(""+decimalFormat.format(r3)+" ft");
+            centimetros.setText(""+decimalFormat.format(r4)+" cm");
+            pulgadas.setText(""+decimalFormat.format(r5)+" in");
+        }else if(ft!=0){
             r1 = ft/3.281;
             r2 = ft/3281;
             r3 = ft/5280;
             r4 = ft*30.48;
             r5 = ft*12;
-            metros.setText(""+r1+" mt");
-            kilometros.setText(""+r2+" km");
-            millas.setText(""+r3+" mi");
-            centimetros.setText(""+r4+" cm");
+            metros.setText(""+decimalFormat.format(r1)+" mt");
+            kilometros.setText(""+decimalFormat.format(r2)+" km");
+            millas.setText(""+decimalFormat.format(r3)+" mi");
+            centimetros.setText(""+decimalFormat.format(r4)+" cm");
             pulgadas.setText(""+r5+" in");
-        }else if(mt==0 && km==0 && mi==0 && ft==0 && cm!=0 && in==0){
+        }else if(cm!=0){
             r1 = cm/100;
             r2 = cm/100000;
             r3 = cm/160934;
             r4 = cm/30.48;
             r5 = cm/2.54;
-            metros.setText(""+r1+" mt");
-            kilometros.setText(""+r2+" km");
-            millas.setText(""+r3+" mi");
-            pies.setText(""+r4+" ft");
-            pulgadas.setText(""+r5+" in");
-        }else if(mt==0 && km==0 && mi==0 && ft==0 && cm==0 && in!=0){
+            metros.setText(""+decimalFormat.format(r1)+" mt");
+            kilometros.setText(""+decimalFormat.format(r2)+" km");
+            millas.setText(""+decimalFormat.format(r3)+" mi");
+            pies.setText(""+decimalFormat.format(r4)+" ft");
+            pulgadas.setText(""+decimalFormat.format(r5)+" in");
+        }else if(in!=0){
             r1 = in/39.37;
             r2 = in/39370;
             r3 = in/63360;
             r4 = in/12;
             r5 = in*2.54;
-            metros.setText(""+r1+" mt");
-            kilometros.setText(""+r2+" km");
-            millas.setText(""+r3+" mi");
-            pies.setText(""+r4+" ft");
-            centimetros.setText(""+r5+" cm");
-        }else if(mt==0 && km==0 && mi==0 && ft==0 && cm==0 && in==0){
+            metros.setText(""+decimalFormat.format(r1)+" mt");
+            kilometros.setText(""+decimalFormat.format(r2)+" km");
+            millas.setText(""+decimalFormat.format(r3)+" mi");
+            pies.setText(""+decimalFormat.format(r4)+" ft");
+            centimetros.setText(""+decimalFormat.format(r5)+" cm");
+        }else{
             JOptionPane.showMessageDialog(this, "Por favor introduce un valor, en algún campo.");
         }
-        
     }//GEN-LAST:event_calcularMousePressed
 
     private void limpiarMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_limpiarMousePressed
@@ -376,6 +383,10 @@ public class LONGconvert extends javax.swing.JInternalFrame {
             centimetros.setText("0");
             pulgadas.setText("0");
     }//GEN-LAST:event_limpiarMousePressed
+
+    private void metrosKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_metrosKeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_metrosKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
